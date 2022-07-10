@@ -1,16 +1,18 @@
-require './logger.rb'
+require 'singleton'
 
 class Logger 
+  include Singleton
+
   def initialize 
     @f = File.open('Log.txt', 'a')
     # @@f = nil
   end
 
-  @@f = Logger.new 
+  # @@f = Logger.new 
 
-  def self.instanse_method 
-    return @@f
-  end
+  # def self.instanse_method 
+  #   return @@f
+  # end
 
   # def self.say_method
   #   puts "Hi Artem!"
@@ -21,5 +23,5 @@ class Logger
     # @f.close
   end
 
-  private_class_method :new
+  # private_class_method :new
 end
